@@ -1,3 +1,10 @@
+# What's this?
+This is my private fork of opennurbs to keep track of efforts to compile under linux with gcc and clang. There have been people who tried it and here I'd just like to add in mine effort, partly making use of those previous ones.
+
+All changes will go into the "mathias" branch.
+
+Thanks for reading this, and may this endeavor be blessed!
+
 # openNURBS
 
 [![Discourse users](https://img.shields.io/discourse/https/discourse.mcneel.com/users.svg)](https://discourse.mcneel.com/c/opennurbs)
