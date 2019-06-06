@@ -47,12 +47,12 @@ GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp
 ON_GNU_COMMON_FLAGS = $(ON_GNU_OPTIMIZER_FLAGS) $(ON_GNU_WARNING_FLAGS) -D_GNU_SOURCE -I. -DON_LITTLE_ENDIAN -DON_SIZEOF_WCHAR_T=4
 
 # C compiler and flags
-CC = gcc
+CC = clang
 CFLAGS = $(ON_GNU_COMMON_FLAGS) 
 
 # C++ compiler and flags
-CCC = g++
-CCFLAGS = $(ON_GNU_COMMON_FLAGS) -std=c++17
+CCC = clang
+CCFLAGS = $(ON_GNU_COMMON_FLAGS) -std=c++14
 
 LINK = $(CCC)
 LINKFLAGS =
