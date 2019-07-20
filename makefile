@@ -47,14 +47,21 @@ GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp
 ON_GNU_COMMON_FLAGS = $(ON_GNU_OPTIMIZER_FLAGS) $(ON_GNU_WARNING_FLAGS) -D_GNU_SOURCE -I. -DON_LITTLE_ENDIAN -DON_SIZEOF_WCHAR_T=4
 
 # C compiler and flags
-# C++ compiler and flags
+# CC = gcc
 # uncomment below for Clang
 CC = clang
 CFLAGS = $(ON_GNU_COMMON_FLAGS) 
 CCFLAGS = $(ON_GNU_COMMON_FLAGS) -std=c++14
-
 LINK = $(CCC)
 LINKFLAGS =
+
+# C++ compiler and flags
+# CCC = g++
+# uncomment below for Clang
+CCC = clang++
+
+
+
 # below necessary LINKFLAGS on Linux for the UUID library
 #LINKFLAGS = -luuid
 
