@@ -47,15 +47,16 @@ GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp
 ON_GNU_COMMON_FLAGS = $(ON_GNU_OPTIMIZER_FLAGS) $(ON_GNU_WARNING_FLAGS) -D_GNU_SOURCE -I. -DON_LITTLE_ENDIAN -DON_SIZEOF_WCHAR_T=4
 
 # C compiler and flags
+# C++ compiler and flags
+# uncomment below for Clang
 CC = clang
 CFLAGS = $(ON_GNU_COMMON_FLAGS) 
-
-# C++ compiler and flags
-CCC = clang
 CCFLAGS = $(ON_GNU_COMMON_FLAGS) -std=c++14
 
 LINK = $(CCC)
 LINKFLAGS =
+# below necessary LINKFLAGS on Linux for the UUID library
+#LINKFLAGS = -luuid
 
 ###############################################################
 
@@ -377,6 +378,7 @@ ON_SRC = opennurbs_3dm_attributes.cpp \
 	opennurbs_topology.cpp \
 	opennurbs_torus.cpp \
 	opennurbs_unicode.cpp \
+	opennurbs_unicode_cpsb.cpp \
 	opennurbs_units.cpp \
 	opennurbs_userdata.cpp \
 	opennurbs_userdata_obsolete.cpp \
@@ -443,6 +445,7 @@ ON_OBJ = opennurbs_3dm_attributes.o \
 	opennurbs_fsp.o \
 	opennurbs_function_list.o \
 	opennurbs_geometry.o \
+	opennurbs_glyph_outline.o \
 	opennurbs_group.o \
 	opennurbs_hash_table.o \
 	opennurbs_hatch.o \
@@ -508,6 +511,7 @@ ON_OBJ = opennurbs_3dm_attributes.o \
 	opennurbs_revsurface.o \
 	opennurbs_rtree.o \
 	opennurbs_sha1.o \
+	opennurbs_sleeplock.o \
 	opennurbs_sort.o \
 	opennurbs_sphere.o \
 	opennurbs_statics.o \
@@ -549,6 +553,7 @@ ON_OBJ = opennurbs_3dm_attributes.o \
 	opennurbs_topology.o \
 	opennurbs_torus.o \
 	opennurbs_unicode.o \
+	opennurbs_unicode_cpsb.o \
 	opennurbs_units.o \
 	opennurbs_userdata.o \
 	opennurbs_userdata_obsolete.o \
