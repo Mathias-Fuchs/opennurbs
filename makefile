@@ -60,8 +60,6 @@ LINKFLAGS =
 # uncomment below for Clang
 CCC = clang++
 
-
-
 # below necessary LINKFLAGS on Linux for the UUID library
 #LINKFLAGS = -luuid
 

@@ -2719,11 +2719,40 @@ bool ONX_Model::IncrementalReadModelGeometry(
     }
 
     model_component_reference = AddModelComponentForExperts(model_geometry,bManageModelGeometryComponent,true,true);
-
+	
     if (model_component_reference.IsEmpty())
       continue;
 
     // return the read object.
+	if (nullptr != model_geometry)
+	{
+		const ON_Geometry* geometry = model_geometry->Geometry(nullptr);
+		if (nullptr != geometry)
+		{
+			const ON_InstanceRef* iref = ON_InstanceRef::Cast(geometry);
+			if (iref)
+			{
+			// whatever
+			}
+			else
+			{
+				// Only handle BREPs for now... Other types later
+				ON_Brep* brep = geometry->BrepForm();
+				if (brep)
+				{
+
+					brep->ShrinkSurfaces();
+					int numFaces = brep->m_F.Count();
+					for (int f = 0; f < numFaces; ++f)
+					{
+						// Process faces...
+					}
+				}
+			}
+		}
+	}
+
+
     break;
   }
 
