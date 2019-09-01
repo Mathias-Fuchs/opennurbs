@@ -53,15 +53,16 @@ CC = clang
 CFLAGS = $(ON_GNU_COMMON_FLAGS) 
 CCFLAGS = $(ON_GNU_COMMON_FLAGS) -std=c++14
 LINK = $(CCC)
-LINKFLAGS =
 
 # C++ compiler and flags
-# CCC = g++
+# CCC = c++
 # uncomment below for Clang
 CCC = clang++
 
+LINK = $(CCC)
 # below necessary LINKFLAGS on Linux for the UUID library
-#LINKFLAGS = -luuid
+LINKFLAGS = -luuid
+
 
 ###############################################################
 
