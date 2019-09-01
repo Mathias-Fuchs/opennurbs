@@ -36,7 +36,7 @@ ON_GNU_WARNING_FLAGS = -Wall \
 	-Wno-switch \
 	-Wno-unknown-pragmas \
 	-Wno-unused-private-field
-	
+
 #	-Wno-inconsistent-missing-override \
 
 
@@ -47,21 +47,24 @@ GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp
 ON_GNU_COMMON_FLAGS = $(ON_GNU_OPTIMIZER_FLAGS) $(ON_GNU_WARNING_FLAGS) -D_GNU_SOURCE -I.
 
 # C compiler and flags
-CC = gcc
-# clang c
-#CC = clang
+# CC = gcc
+# uncomment below for Clang
+CC = clang
 CFLAGS = $(ON_GNU_COMMON_FLAGS) 
 
 # C++ compiler and flags
 CCC = g++
+
 # clang++
-#CCC = c++
+# CCC = c++
+# uncomment below for Clang
+CCC = clang++
 CCFLAGS = $(ON_GNU_COMMON_FLAGS) -std=c++14
 
 LINK = $(CCC)
 LINKFLAGS =
-# Linux link flag needed for libuuid
-#LINKFLAGS = -luuid
+# below necessary LINKFLAGS on Linux for the UUID library
+LINKFLAGS = -luuid
 
 ###############################################################
 
@@ -517,6 +520,7 @@ ON_OBJ = opennurbs_3dm_attributes.o \
 	opennurbs_revsurface.o \
 	opennurbs_rtree.o \
 	opennurbs_sha1.o \
+	opennurbs_sleeplock.o \
 	opennurbs_sort.o \
 	opennurbs_sphere.o \
 	opennurbs_statics.o \
